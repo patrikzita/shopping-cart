@@ -1,3 +1,165 @@
-header{
-    background-color: $main-color;
+header {
+    background-color: $white;
+    padding: 1rem 1rem;
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.841);
+
+    .nav-main {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        @media (min-width: 1080px) {
+            justify-content: space-between;
+            margin: 0 1rem;
+        }
+    }
+
+}
+
+.brand {
+    .logo {
+        width: 100px;
+
+        @media (min-width: 450px) {
+            width: 150px;
+            margin: 2px 0;
+        }
+
+        @media (min-width: 550px) {
+            width: 200px;
+            margin: 2px 0;
+        }
+
+        @media (min-width: 800px) {
+            width: 250px;
+            margin: 2px 0;
+        }
+    }
+}
+
+.search {
+    display: flex;
+
+    .search-keyword {
+        border: none;
+        background-color: $gray-light;
+        padding: 0.1rem .2rem;
+        width: 100px;
+        color: $white;
+
+        &::placeholder {
+            color: $white;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        @media (min-width: 450px) {
+            width: 150px;
+            padding: 0.1rem .5rem;
+
+        }
+
+        @media (min-width: 550px) {
+            width: 200px;
+        }
+
+        @media (min-width: 800px) {
+            width: 300px;
+        }
+    }
+
+    .search-button {
+        padding: .3rem;
+        color: $white;
+        background-color: $gray-dark;
+        border: none;
+        transition: 100ms ease-in;
+
+        &:hover {
+            background-color: $brand-primary;
+        }
+    }
+
+}
+
+.right-bar {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-family: 'Alexandria', sans-serif;
+    font-size: .8rem;
+    font-weight: 100;
+
+    .login {
+        a {
+            color: $gray-light;
+            text-decoration: none;
+            transition: 100ms ease-in;
+
+            &::after {
+                content: "";
+                margin-left: 8px;
+
+                @media (min-width: 1080px) {
+                    position: relative;
+                    top: -7px;
+                    content: "SIGN IN";
+                    margin-left: 8px;
+                }
+            }
+
+            &:hover {
+                color: $brand-primary;
+            }
+        }
+    }
+
+    .cart {
+        .count{
+            display: block;
+            position: absolute;
+            right: 111px;
+            top: 15px;
+            color: white;
+            font-weight: 800;
+            font-size: 12px;
+            height: 20px;
+            line-height: 20px;
+            width: 20px;
+            text-align: center;
+            background-color: #fc7710;
+            border-radius: 50%;
+        }
+        a {
+            color: $gray-light;
+            text-decoration: none;
+            transition: 100ms ease-in;
+
+            &::after {
+                content: "";
+                margin-left: 8px;
+
+                @media (min-width: 1080px) {
+                    position: relative;
+                    top: -7px;
+                    content: "MY CART";
+                    margin-left: 8px;
+                }
+            }
+
+            &:hover {
+                color: $brand-primary;
+            }
+        }
+    }
+
+
+
+    @media (min-width: 700px) {
+        width: 200px;
+        margin-right: 1rem;
+    }
+
 }

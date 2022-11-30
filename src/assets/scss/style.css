@@ -1,7 +1,342 @@
+@charset "UTF-8";
 header {
-  background-color: red;
+  background-color: #fff;
+  padding: 1rem 1rem;
+  box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.841);
+}
+header .nav-main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+@media (min-width: 1080px) {
+  header .nav-main {
+    justify-content: space-between;
+    margin: 0 1rem;
+  }
+}
+
+.brand .logo {
+  width: 100px;
+}
+@media (min-width: 450px) {
+  .brand .logo {
+    width: 150px;
+    margin: 2px 0;
+  }
+}
+@media (min-width: 550px) {
+  .brand .logo {
+    width: 200px;
+    margin: 2px 0;
+  }
+}
+@media (min-width: 800px) {
+  .brand .logo {
+    width: 250px;
+    margin: 2px 0;
+  }
+}
+
+.search {
+  display: flex;
+}
+.search .search-keyword {
+  border: none;
+  background-color: #99aec2;
+  padding: 0.1rem 0.2rem;
+  width: 100px;
+  color: #fff;
+}
+.search .search-keyword::-moz-placeholder {
+  color: #fff;
+}
+.search .search-keyword:-ms-input-placeholder {
+  color: #fff;
+}
+.search .search-keyword::placeholder {
+  color: #fff;
+}
+.search .search-keyword:focus {
+  outline: none;
+}
+@media (min-width: 450px) {
+  .search .search-keyword {
+    width: 150px;
+    padding: 0.1rem 0.5rem;
+  }
+}
+@media (min-width: 550px) {
+  .search .search-keyword {
+    width: 200px;
+  }
+}
+@media (min-width: 800px) {
+  .search .search-keyword {
+    width: 300px;
+  }
+}
+.search .search-button {
+  padding: 0.3rem;
+  color: #fff;
+  background-color: #767676;
+  border: none;
+  transition: 100ms ease-in;
+}
+.search .search-button:hover {
+  background-color: #0054a6;
+}
+
+.right-bar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-family: "Alexandria", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 100;
+}
+.right-bar .login a {
+  color: #99aec2;
+  text-decoration: none;
+  transition: 100ms ease-in;
+}
+.right-bar .login a::after {
+  content: "";
+  margin-left: 8px;
+}
+@media (min-width: 1080px) {
+  .right-bar .login a::after {
+    position: relative;
+    top: -7px;
+    content: "SIGN IN";
+    margin-left: 8px;
+  }
+}
+.right-bar .login a:hover {
+  color: #0054a6;
+}
+.right-bar .cart .count {
+  display: block;
+  position: absolute;
+  right: 111px;
+  top: 15px;
+  color: white;
+  font-weight: 800;
+  font-size: 12px;
+  height: 20px;
+  line-height: 20px;
+  width: 20px;
+  text-align: center;
+  background-color: #fc7710;
+  border-radius: 50%;
+}
+.right-bar .cart a {
+  color: #99aec2;
+  text-decoration: none;
+  transition: 100ms ease-in;
+}
+.right-bar .cart a::after {
+  content: "";
+  margin-left: 8px;
+}
+@media (min-width: 1080px) {
+  .right-bar .cart a::after {
+    position: relative;
+    top: -7px;
+    content: "MY CART";
+    margin-left: 8px;
+  }
+}
+.right-bar .cart a:hover {
+  color: #0054a6;
+}
+@media (min-width: 700px) {
+  .right-bar {
+    width: 200px;
+    margin-right: 1rem;
+  }
+}
+
+.products {
+  margin-top: 2rem;
+}
+.products .product {
+  background-color: #fff;
+  margin: 1rem auto;
+  max-width: 400px;
+  border-radius: 2px;
+  padding: 1rem;
+}
+.products .product .product-image {
+  overflow: hidden;
+}
+.products .product .product-image img {
+  width: 100%;
+  transform: scale(1);
+  transition: transform 500ms ease;
+}
+.products .product .product-image img:hover {
+  transform: scale(1.1);
+}
+.products .product .product-name {
+  font-family: "Alexandria", sans-serif;
+  text-align: center;
+}
+.products .product .product-price {
+  font-family: "Alexandria", sans-serif;
+  font-weight: 100;
+  font-size: 0.8rem;
+  text-align: center;
+}
+.products .product .product-price::after {
+  content: " $";
+}
+.products .product .product-action {
+  margin-top: 1rem;
+  text-align: center;
+}
+.products .product .product-action button {
+  cursor: pointer;
+  background-color: #f3a229;
+  color: #fff;
+  font-family: "Alexandria", sans-serif;
+  padding: 0.4rem;
+  border: none;
+}
+.products .product:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+@media (min-width: 480px) {
+  .products .product {
+    width: 300px;
+  }
+}
+@media (min-width: 1100px) {
+  .products .product {
+    width: 250px;
+  }
+}
+.products .product-added-container {
+  position: fixed;
+  top: 5rem;
+  right: 42%;
+}
+.products .product-added-container .product-added {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: green;
+}
+.products .product-added-container .product-added p {
+  font-family: "Alexandria", sans-serif;
+  color: #fff;
+}
+@media (min-width: 480px) {
+  .products {
+    display: grid;
+  }
+}
+@media (min-width: 720px) {
+  .products {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1100px) {
+  .products {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 1200px) {
+  .products {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.cart-preview {
+  position: absolute;
+  top: 70px;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  z-index: 999;
+  width: 300px;
+  padding: 1rem;
+  opacity: 0;
+  transition: 200ms ease;
+}
+@media (min-width: 800px) {
+  .cart-preview {
+    top: 79px;
+  }
+}
+.cart-preview .cart-items .cart-item {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.7rem;
+  margin: 1rem 0;
+}
+.cart-preview .cart-items .cart-item .product-info {
+  max-width: 80px;
+}
+.cart-preview .cart-items .cart-item .product-info .product-name {
+  font-family: "Alexandria", sans-serif;
+}
+.cart-preview .cart-items .cart-item .product-info .product-price::after {
+  content: " Kč";
+}
+.cart-preview .cart-items .cart-item .product-total {
+  min-width: 50px;
+}
+.cart-preview .cart-items .cart-item .product-total .quantity::after {
+  content: " x";
+}
+.cart-preview .cart-items .cart-item .product-total .amount::after {
+  content: " Kč";
+}
+.cart-preview .cart-items .cart-item .product-remove {
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+.cart-preview .cart-items::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  right: 118px;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #f3a229;
+}
+.cart-preview .product-checkout {
+  border: none;
+  padding: 0.5rem;
+  background-color: #fc7710;
+  color: white;
+  width: 100%;
+  cursor: pointer;
+}
+
+.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.cart-blank {
+  display: flex;
+  color: #767676;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: #fff;
+  background-color: beige;
 }/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,99 @@
+.products {
+    margin-top: 2rem;
+
+    .product {
+        background-color: $white;
+        margin: 1rem auto;
+        max-width: 400px;
+        border-radius: 2px;
+        padding: 1rem;
+
+        .product-image {
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                transform: scale(1);
+                transition: transform 500ms ease;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .product-name {
+            font-family: 'Alexandria', sans-serif;
+            text-align: center;
+        }
+
+        .product-price {
+            font-family: 'Alexandria', sans-serif;
+            font-weight: 100;
+            font-size: .8rem;
+            text-align: center;
+
+            &::after {
+                content: " $";
+            }
+        }
+
+        .product-action {
+            margin-top: 1rem;
+            text-align: center;
+            button {
+                cursor: pointer;
+                background-color: $brand-secondary;
+                color: $white;
+                font-family: 'Alexandria', sans-serif;
+                padding: .4rem;
+                border: none;
+            }
+        }
+        
+        &:hover {
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        @media(min-width: 480px) {
+            width: 300px;
+        }
+
+        @media(min-width: 1100px) {
+            width: 250px;
+        }
+
+    }
+    .product-added-container{
+        position: fixed;
+        top: 5rem;
+        right: 42%;
+        
+        .product-added{
+            display: flex;
+            align-items: center;
+            padding: .5rem;
+            background-color: green;
+            p{
+                font-family: 'Alexandria', sans-serif;
+                color: $white;
+            }
+        }
+    }
+
+    @media(min-width: 480px) {
+        display: grid;
+    }
+
+    @media(min-width: 720px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media(min-width: 1100px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media(min-width: 1200px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

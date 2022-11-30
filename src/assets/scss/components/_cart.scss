@@ -1,0 +1,96 @@
+.cart-preview {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: $white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    z-index: 999;
+    width: 300px;
+    padding: 1rem;
+    opacity: 0;
+    transition: 200ms ease;
+
+    @media (min-width: 800px) {
+        top: 79px;
+    }
+
+    .cart-items {
+        .cart-item {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 1rem;
+            font-size: .7rem;
+            margin: 1rem 0;
+
+            .product-info {
+                max-width: 80px;
+
+                .product-name {
+                    font-family: 'Alexandria', sans-serif;
+                }
+
+                .product-price {
+                    &::after {
+                        content: " Kč";
+                    }
+                }
+            }
+
+            .product-total {
+                min-width: 50px;
+
+                .quantity {
+                    &::after {
+                        content: " x";
+                    }
+                }
+
+                .amount {
+                    &::after {
+                        content: " Kč";
+                    }
+                }
+            }
+
+            .product-remove {
+                border: none;
+                background-color: $white;
+                cursor: pointer;
+            }
+
+           
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: -7px;
+            right: 118px;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-bottom: 7px solid $brand-secondary;
+        }
+    }
+
+    .product-checkout {
+        border: none;
+        padding: .5rem;
+        background-color: #fc7710;
+        color: white;
+        width: 100%;
+        cursor: pointer;
+    }
+}
+
+.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.cart-blank {
+    display: flex;
+    color: $gray-dark;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+}
