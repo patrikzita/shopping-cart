@@ -1,6 +1,7 @@
 import { createContext, useReducer } from "react";
 const initialState = {
   isCartOpen: false,
+  isProductAdd: false,
   items: [],
 };
 export const CartStateContext = createContext();
@@ -9,6 +10,7 @@ export const ACTIONS = {
   ADD_TO_CART: "add-to-cart",
   REMOVE_FROM_CART: "remove_from_cart",
   TOGGLE_CART_POPUP: "toggle-cart-popup",
+  REMOVE_WINDOW: "remove-window"
 };
 
 const reducer = (state, action) => {
@@ -36,17 +38,23 @@ const reducer = (state, action) => {
       } else {
         cartItems = [...state.items, action.payload.cartItem];
       }
-      return { ...state, items: cartItems };
+      return { ...state, items: cartItems, isProductAdd: true};
       case ACTIONS.REMOVE_FROM_CART:
         return {
           ...state,
           items: state.items.filter((item) => item.id !== action.payload.cartItem.id)
         }
+        case ACTIONS.REMOVE_WINDOW:
+          return{
+            ...state,
+            isProductAdd: false,
+          }
 
     default:
       throw new Error(`Unknown action: ${action.type}`);
   }
 };
+
 
 function CartProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);

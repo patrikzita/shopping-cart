@@ -133,6 +133,7 @@ header {
             border-radius: 50%;
         }
         a {
+            cursor: pointer;
             color: $gray-light;
             text-decoration: none;
             transition: 100ms ease-in;

@@ -11,6 +11,7 @@ function Product({ data }) {
     dispatch({type: ACTIONS.ADD_TO_CART, payload: {cartItem: product}});
     setIsAdded(true);
     setTimeout(() => {
+      dispatch({type: ACTIONS.REMOVE_WINDOW});
       setIsAdded(false);
     }, 3500);
   };

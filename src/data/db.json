@@ -1,0 +1,25 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "img": "src/assets/img/pokemon_violet.jpg",
+            "name": "Pokémon Violet",
+            "price": 59.99,
+            "description": "Text pro description shopu"
+        },
+        {
+            "id": 2,
+            "img": "src/assets/img/pokemon_scarlet.jpg",
+            "name": "Pokémon Scarlet",
+            "price": 99.99,
+            "description": "Text pro description shopu"
+        },
+        {
+            "id": 3,
+            "img": "src/assets/img/pokemon_sword.jpg",
+            "name": "Pokémon Sword",
+            "price": 59.99,
+            "description": "Text pro description shopu"
+        }
+    ]
+}
