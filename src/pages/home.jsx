@@ -7,6 +7,10 @@ import {
   ProductDispatchContext,
   ProductStateContext,
 } from "../contexts/products";
+import ProductList from "../components/ProductList";
+import { Route, Routes } from "react-router-dom";
+import ProductPage from "../components/ProductPage";
+import NotFound from "./notFound";
 
 function Home() {
   const { products, isLoaded } = useContext(ProductStateContext);
@@ -18,18 +22,27 @@ function Home() {
   return (
     <>
       <Header />
-      <div className="products">
+      {/* <div className="products">
         {isLoaded ? (
           products.map((item) => {
             return <Product key={item.id} data={item} />;
           })
         ) : (
           <div>
-             <h1>Request failed..</h1>
+            <h1>Request failed..</h1>
           </div>
         )}
-      </div>
+      </div> */}
       <CartPreview />
+      <Routes>
+        <Route index element={<ProductList />}/>
+        <Route path="products">
+          <Route index element={<ProductList />} />
+          <Route path=":id" element={<ProductPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </>
   );
 }

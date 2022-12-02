@@ -1,0 +1,54 @@
+.product-container {
+    background-color: rgb(255, 255, 255);
+    padding: 1rem;
+    height: 100vh;
+    .product-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            width: 40%;
+            max-width: 400px;
+        }
+
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2rem;
+            min-width: 300px;
+            text-align: center;
+
+            h1 {
+                margin: 1rem 0;
+            }
+
+            h2 {
+                color: $brand-primary;
+
+                &::after {
+                    content: " Kč";
+                }
+            }
+
+            .btn-add {
+
+                cursor: pointer;
+                background-color: $brand-secondary;
+                color: $white;
+                font-family: 'Alexandria', sans-serif;
+                padding: .4rem;
+                border: none;
+
+            }
+            @media (min-width: 720px){
+                text-align: start;
+            }
+        }
+        @media (min-width: 720px){
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+    }
+}

@@ -8,6 +8,7 @@ import {
   CartDispatchContext,
   CartStateContext,
 } from "../contexts/cart";
+import { Link } from "react-router-dom";
 
 function Header() {
   const { items } = useContext(CartStateContext);
@@ -20,9 +21,9 @@ function Header() {
     <header>
       <div className="nav-main">
         <div className="brand">
-          <a href="#">
-            <img className="logo" src="src/assets/img/logo.svg" alt="" />
-          </a>
+          <Link to="/">
+            <img className="logo" src="../src/assets/img/logo.svg" alt="" />
+          </Link>
         </div>
         <div className="search">
           <input

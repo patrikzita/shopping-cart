@@ -118,10 +118,9 @@ header {
 
     .cart {
         .count{
-            display: block;
             position: absolute;
-            right: 111px;
-            top: 15px;
+            top: 11px;
+            right: 25px;
             color: white;
             font-weight: 800;
             font-size: 12px;
@@ -131,6 +130,14 @@ header {
             text-align: center;
             background-color: #fc7710;
             border-radius: 50%;
+            @media (min-width: 700px) {
+                right: 97px;
+            }
+            @media (min-width: 1080px) {
+                right: 110px;
+                
+            }
+        
         }
         a {
             cursor: pointer;

@@ -116,10 +116,9 @@ header .nav-main {
   color: #0054a6;
 }
 .right-bar .cart .count {
-  display: block;
   position: absolute;
-  right: 111px;
-  top: 15px;
+  top: 11px;
+  right: 25px;
   color: white;
   font-weight: 800;
   font-size: 12px;
@@ -129,6 +128,16 @@ header .nav-main {
   text-align: center;
   background-color: #fc7710;
   border-radius: 50%;
+}
+@media (min-width: 700px) {
+  .right-bar .cart .count {
+    right: 97px;
+  }
+}
+@media (min-width: 1080px) {
+  .right-bar .cart .count {
+    right: 110px;
+  }
 }
 .right-bar .cart a {
   cursor: pointer;
@@ -167,6 +176,10 @@ header .nav-main {
   max-width: 400px;
   border-radius: 2px;
   padding: 1rem;
+}
+.products .product a {
+  color: black;
+  text-decoration: none;
 }
 .products .product .product-image {
   overflow: hidden;
@@ -340,6 +353,86 @@ header .nav-main {
   justify-content: center;
   align-items: center;
   height: 250px;
+}
+
+.product-container {
+  background-color: rgb(255, 255, 255);
+  padding: 1rem;
+  height: 100vh;
+}
+.product-container .product-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.product-container .product-main img {
+  width: 40%;
+  max-width: 400px;
+}
+.product-container .product-main .product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  min-width: 300px;
+  text-align: center;
+}
+.product-container .product-main .product-info h1 {
+  margin: 1rem 0;
+}
+.product-container .product-main .product-info h2 {
+  color: #0054a6;
+}
+.product-container .product-main .product-info h2::after {
+  content: " Kč";
+}
+.product-container .product-main .product-info .btn-add {
+  cursor: pointer;
+  background-color: #f3a229;
+  color: #fff;
+  font-family: "Alexandria", sans-serif;
+  padding: 0.4rem;
+  border: none;
+}
+@media (min-width: 720px) {
+  .product-container .product-main .product-info {
+    text-align: start;
+  }
+}
+@media (min-width: 720px) {
+  .product-container .product-main {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+
+.page404 {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page404 .main h1 {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+.page404 .main .big-text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 7rem;
+}
+.page404 .main .text {
+  text-align: center;
+}
+.page404 .main .text .error-btn {
+  border: none;
+  padding: 1rem;
+  margin: 1rem auto;
+  background-color: #0054a6;
+  color: #fff;
+}
+.page404 .main .text .error-btn:hover {
+  box-shadow: 0px 1px 20px rgba(10, 1, 1, 0.841);
 }
 
 * {
